@@ -54,7 +54,6 @@ df = df.drop_duplicates().copy()
 
 df = df.sort_values("Date").reset_index(drop=True)
 df.to_csv(basic_file, index=False)
-
 df.info()
 print(df.describe().round(2))
 print(df.isna().sum())
@@ -62,7 +61,6 @@ print(df.isna().sum())
 print("Start:", df["Date"].min())
 print("End:", df["Date"].max())
 print("Rows:", len(df))
-
 invalid_ohlc = (
     (df["High"] < df["Low"])
     | (df["High"] < df[["Open", "Close"]].max(axis=1))
@@ -83,5 +81,4 @@ if answer not in {"yes", "y"}:
 else:
     # Additional cleaning choices
     pass
-
 

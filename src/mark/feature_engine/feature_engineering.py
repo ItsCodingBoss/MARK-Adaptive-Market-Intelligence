@@ -214,6 +214,7 @@ def prepare_model_data():
     model_data = model_data.dropna(
         subset=feature_columns + ["target_up"]
     ).copy()
+    
 
     rows_after = len(model_data)
     if __name__ == "__main__":
